@@ -1,11 +1,14 @@
-e = 0.0001
-def wb(x):
-    if x < 0: return -x;
-    else: return x;
-P = 9
-a1 = 1
-a2 = P
-while wb(a1 - a2) > e:
-    a1 = (a1+a2)/2
-    a2 = P/a1
-print(a2)
+def f(x):
+    return x * x + 1
+
+a = 0
+b = 2
+E = 1000
+
+dx = (b - a) / E
+calka = 0
+for i in range(E):
+    h = f(a + i * dx)
+    calka += h * dx
+
+print(f"Przybliżona wartość całki wynosi: {calka}")
